@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding: 20px;
+
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    > button {
+        background-color: #BE071E;
+
+        display: flex;
+        align-items: center;
+
+        margin-top: 15px;
+
+        outline: none;
+        border: none;
+
+        color: #fff;
+        font-size: 15px;
+
+        padding: 8px 20px;
+
+        border-radius: 4px;
+
+        cursor: pointer;
+
+        border: 2px solid transparent;
+
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            border: 2px solid #fff;
+
+        }
+
+        > svg {
+            margin-right: 10px;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+.card-comic{
+    height: 350px;
+    width: 250px;
+    margin: 10px;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    transition: all .3s ease-in-out;
+
+    border: 2px solid transparent;
+
+    position: relative;
+
+    &:hover {
+        border: 2px solid #fefefe;
+        cursor: pointer;
+
+        .card-comic__info {
+            transform: translateY(0%);
+        }
+
+        .card-comic__image {
+            transform: scale(1.2);
+        }
+    
+    }
+}
+
+.card-comic__image {
+    width: 100%;
+    height: 100%;
+    
+    transition: all .3s ease-in-out;
+}
+
+.card-comic__info {
+    background-color: #fefefe;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    height: 30%;
+    width: 100%;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    padding: 0 10px;
+
+    position:  absolute;
+    bottom: 0;
+
+    transform: translateY(100%);
+
+    transition: all .3s ease-in-out;
+}

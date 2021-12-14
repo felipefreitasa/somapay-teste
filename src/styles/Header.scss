@@ -1,0 +1,74 @@
+.header {
+    background-color: #be071e;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1;
+
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    > img {
+        width: 90px;
+
+        cursor: pointer;
+    }
+
+    .header__content {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .header__content__user__info {
+            text-align: right;
+        }
+
+        .button-sign-out {
+            background-color: #fefefe;
+
+            outline: none;
+            border: none;
+
+            height: 36px;
+            width: 36px;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: all .3s ease-in-out;
+
+            border-radius: 4px;
+            border: 2px solid transparent;
+
+            cursor: pointer;
+
+            margin-left: 10px;
+
+            &:hover {
+                border: 2px solid #292929;
+            }
+
+            .button-sign-out__icon {
+                width: 60%;
+            }
+        }
+
+        .header__content__username {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .header__content__userEmail {
+            font-size: 13px;
+            font-weight: 300;
+        }
+    }
+}

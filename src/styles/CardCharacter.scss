@@ -1,0 +1,55 @@
+.card-character {
+    height: 100px;
+    width: 100px;
+
+    margin: 10px;
+
+    border-radius: 6px;
+    border: 2px solid transparent;
+
+    transition: all .3s ease-in-out;
+
+    position: relative;
+
+    overflow: hidden;
+
+    &:hover {
+        border: 2px solid #fefefe;
+
+        > p {
+            transform: translateY(0%);
+        }
+
+        > img {
+            transform: scale(1.2);
+        }
+    }
+
+    > img {
+        object-fit: cover;
+
+        height: 100%;
+        width: 100%;
+
+        transition: all .3s ease-in-out;
+    }
+
+    > p {
+        position: absolute;
+        bottom: 0;
+
+        background-color: #fefefe;
+        width: 100%;
+
+        padding: 5px 0;
+
+        color: #292929;
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
+
+        transform: translateY(100%);
+
+        transition: all .3s ease-in-out;
+    }
+}
