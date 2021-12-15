@@ -14,24 +14,37 @@
 
     padding: 0 30px;
 
-    > img {
+    .header-logo{
         width: 90px;
 
         cursor: pointer;
     }
 
-    .header__content {
+    .header-content {
         color: #fff;
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        .header__content__user__info {
+        .header-content__user__info {
             text-align: right;
+
+            display: flex;
+            flex-direction: column;
+
+            @media (min-width: 0) {
+                display: none;
+            }
+
+            @media (min-width: 760px) {
+                display: flex;
+            }
         }
 
-        .button-sign-out {
+        .header-content__button {
             background-color: #fefefe;
+
+            color: #be071e;
 
             outline: none;
             border: none;
@@ -55,18 +68,14 @@
             &:hover {
                 border: 2px solid #292929;
             }
-
-            .button-sign-out__icon {
-                width: 60%;
-            }
         }
 
-        .header__content__username {
+        .header-content__username {
             font-size: 15px;
             font-weight: 500;
         }
 
-        .header__content__userEmail {
+        .header-content__userEmail {
             font-size: 13px;
             font-weight: 300;
         }

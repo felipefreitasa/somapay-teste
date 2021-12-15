@@ -32,7 +32,7 @@ function App() {
             loggedUser ?
               <>
                 <Header userName={loggedUser?.displayName} userEmail={loggedUser?.email} />
-                <Route path="/" exact component={HomePage} />
+                <Route path="/" component={HomePage} exact />
                 <Route path="/details" component={DetailsPage} />
               </>
               :

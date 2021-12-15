@@ -2,43 +2,42 @@ import React, { useLayoutEffect, useState } from 'react'
 import { useSelector } from "react-redux";
 import marvelApi from '../services/marvelApi'
 import { useHistory } from "react-router-dom";
-import '../styles/ComicDetails.scss'
+import '../styles/DetailsPage.scss'
 import CardCharacter from '../components/CardCharacter';
 
 const DetailsPage = () => {
     const history = useHistory();
-    const [comics] = useSelector((state) => state.comics);
+    const [selectedComic] = useSelector((state) => state.selectedComic);
     const [characters, setCharacters] = useState([]);
 
     useLayoutEffect(() => {
-        if (!comics) {
+        if (!selectedComic) {
             history.push("/");
         } else {
             async function getCharacters() {
-                const response = await marvelApi.get(`/comics/${comics.id}/characters`);
-                setCharacters(response.data.data.results);
+                const res = await marvelApi.get(`/comics/${selectedComic.id}/characters`);
+                setCharacters(res.data.data.results);
             }
             getCharacters();
         }
-
-    }, [history, comics]);
+    }, [history, selectedComic]);
 
     return (
         <div className='comic-details' >
 
             <img
-                src={`${comics?.thumbnail.path}.${comics?.thumbnail.extension}`}
-                alt={comics?.title}
+                src={`${selectedComic?.thumbnail.path}.${selectedComic?.thumbnail.extension}`}
+                alt={selectedComic?.title}
                 className='comic-details__thumbnail'
             />
 
             <div className="comic-details__content">
                 <p className='comic-details__title'>
-                    {comics?.title}
+                    {selectedComic?.title}
                 </p>
 
                 <p className='comic-details__description'>
-                    {comics?.description}
+                    {selectedComic?.description}
                 </p>
 
                 {characters.length > 0 ?

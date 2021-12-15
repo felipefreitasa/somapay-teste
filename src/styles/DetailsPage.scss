@@ -1,0 +1,101 @@
+.comic-details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media (min-width: 0) {
+        flex-direction: column;
+
+        padding: 30px;
+    }
+
+    @media (min-width: 900px) {
+        flex-direction: row;
+
+        padding: 0;
+    }
+
+    .comic-details__thumbnail {
+        border-radius: 6px;
+
+        @media (min-width: 0) {
+            width: 200px;
+            height: 300px;
+
+            object-fit: cover;
+        }
+
+        @media (min-width: 900px) {
+            height: calc(100vh - 70px);
+            width: 50%;
+        }
+    }
+
+    .comic-details__content {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        color: #fff;
+
+        @media (min-width: 0) {
+            margin-left: 0px;
+        }
+
+        @media (min-width: 900px) {
+            margin-left: 40px;
+        }
+
+        .comic-details__title {
+            font-weight: bold;
+            text-align: center;
+
+            @media (min-width: 0) {
+                font-size: 16px;
+
+                margin-top: 40px;
+            }
+
+            @media (min-width: 900px) {
+                font-size: 30px;
+
+                margin-top: 0px;
+
+                width: 95%;
+            }
+        }
+
+        .comic-details__description {
+            margin: 20px 0;
+
+            font-size: 15px;
+            font-weight: 300;
+
+            text-align: center;
+        }
+
+        .comic-details__characters__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .comic-details__characters {
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .comic-details__characters__image {
+            width: 80px;
+            height: 80px;
+
+            object-fit: cover;
+
+            border-radius: 4px;
+
+            margin: 10px;
+        }
+    }
+}

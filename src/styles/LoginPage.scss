@@ -27,11 +27,13 @@
     justify-content: center;
     flex-direction: column;
 
-    > img {
+    .login-content__logo {
         width: 250px;
+
+        border-radius: 4px;
     }
 
-    > h1 {
+    .login-content__title {
         color: #fefefe;
         font-weight: 400;
         font-size: 25px;
@@ -40,7 +42,7 @@
         margin-bottom: 10px;
     }
 
-    > p {
+    .login-content__paragraph {
         color: #858585;
         font-weight: 300;
         font-size: 16px;
@@ -49,7 +51,7 @@
  
     }
 
-    > button {
+    .login-content__button {
         background-color: #be071e;
 
         display: flex;

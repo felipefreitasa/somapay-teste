@@ -3,7 +3,7 @@ import '../styles/Header.scss'
 import MarvelLogo from '../assets/marvel-logo.png'
 import { useHistory } from 'react-router-dom'
 import { firebase } from '../services/firebase'
-import SignOutIcon from '../assets/logout-icon.png'
+import { BiLogOut } from 'react-icons/bi';
 
 const Header = ({ userName, userEmail }) => {
     const history = useHistory()
@@ -15,34 +15,30 @@ const Header = ({ userName, userEmail }) => {
     return (
         <header className='header'>
             <img
-                className='marvel-logo'
+                className='header-logo'
                 src={MarvelLogo}
                 alt="Marvel Logo"
                 onClick={() => history.push('/')}
             />
 
             {userName ? (
-                <div className='header__content'>
+                <div className='header-content'>
 
-                    <div className='header__content__user__info'>
-                        <p className='header__content__username'>
+                    <div className='header-content__user__info'>
+                        <p className='header-content__username'>
                             {userName}
                         </p>
 
-                        <p className='header__content__userEmail'>
+                        <p className='header-content__userEmail'>
                             {userEmail}
                         </p>
                     </div>
 
                     <button
-                        className='button-sign-out'
+                        className='header-content__button'
                         onClick={SignOut}
                     >
-                        <img
-                            className='button-sign-out__icon'
-                            src={SignOutIcon}
-                            alt="Sign Out Icon"
-                        />
+                        <BiLogOut size='25px'/>
                     </button>
                 </div>
             )

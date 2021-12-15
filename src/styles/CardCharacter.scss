@@ -16,16 +16,16 @@
     &:hover {
         border: 2px solid #fefefe;
 
-        > p {
+        .card-character__name {
             transform: translateY(0%);
         }
 
-        > img {
+        .card-character__image {
             transform: scale(1.2);
         }
     }
 
-    > img {
+    .card-character__image {
         object-fit: cover;
 
         height: 100%;
@@ -34,7 +34,7 @@
         transition: all .3s ease-in-out;
     }
 
-    > p {
+    .card-character__name {
         position: absolute;
         bottom: 0;
 

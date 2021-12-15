@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
-
-import comics from "./reducerComics";
+import selectedComic from "./selectComicReducers";
 
 export default combineReducers({
-  comics,
+  selectedComic,
 });

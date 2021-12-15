@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import marvelApi from '../services/marvelApi'
-import '../styles/ComicsList.scss'
+import '../styles/HomePage.scss'
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from "react-redux";
-import { addComics } from '../redux/actionsComics'
+import { selectComic } from '../redux/selectComicActions'
 import CardComic from '../components/CardComic'
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import Spinner from '../components/Spinner';
@@ -18,8 +18,8 @@ const HomePage = () => {
         setLoading(true)
 
         marvelApi.get('./comics')
-            .then((response) => {
-                setComics(response.data.data.results)
+            .then((res) => {
+                setComics(res.data.data.results)
                 setLoading(false)
             })
             .catch(err => console.log(err))
@@ -29,19 +29,19 @@ const HomePage = () => {
         try {
             const offset = comics.length
 
-            const response = await marvelApi.get('/comics', {
+            const res = await marvelApi.get('/comics', {
                 params: { offset }
             })
 
-            setComics([...comics, ...response.data.data.results])
+            setComics([...comics, ...res.data.data.results])
         } catch (err) {
             console.log(err);
         }
     }, [comics])
 
 
-    function goToDetails(comics) {
-        dispatch(addComics(comics));
+    function goToDetails(comic) {
+        dispatch(selectComic(comic));
         history.push('/details')
     }
 
@@ -49,7 +49,7 @@ const HomePage = () => {
         <div className='container'>
             {loading === true ? <Spinner /> : null}
 
-            <div>
+            <div className='container-cards'>
                 {
                     comics.map(comic => {
                         return (
@@ -65,7 +65,10 @@ const HomePage = () => {
             </div>
 
             {loading === false ?
-                <button onClick={loadMoreComics}>
+                <button
+                    onClick={loadMoreComics}
+                    className='container-button'
+                >
                     <AiOutlinePlusCircle size='25px' /> Ver mais...
                 </button>
                 :
