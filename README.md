@@ -26,6 +26,7 @@
 - React Router Dom
 - Animate On Scroll Library
 - Axios
+- SASS/SCSS
 - Marvel API
 - React Icons
 - Google Fonts
